@@ -17,11 +17,11 @@ class TestIsTriangle(unittest.TestCase):
     def test_scalene_triangle(self):
         """All sides different"""
         self.assertTrue(is_triangle(3, 4, 5))
-
+        
     def test_large_valid_triangle(self):
-        """Large numbers that satisfy the triangle inequality"""
-        self.assertTrue(is_triangle(1000, 999, 2))
-
+    """Fixed: 1000,999,1 is degenerate; use 1000,999,2"""
+    self.assertTrue(is_triangle(1000, 999, 2))
+   
     def test_float_valid_triangle(self):
         """Float sides"""
         self.assertTrue(is_triangle(1.5, 2.5, 3.0))
